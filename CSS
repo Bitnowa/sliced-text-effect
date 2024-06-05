@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;0,800;0,900;1,600&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+  --bg-color: rgb(50, 67, 58);
+  --text-highlight-color: #dcdcdc;
+}
+
+body {
+  margin: 0;
+}
+
+.container {
+  display: grid;
+  place-items: center;
+  background-color: var(--bg-color);
+  min-height: 100vh;
+  font-family: "Oswald", sans-serif;
+  font-size: 100px;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: var(--text-highlight-color);
+  overflow: hidden;
+}
+
+.container > div {
+  grid-area: 1 / 1 / -1 / -1;
+}
+
+.text-top {
+  clip-path: polygon(0% 0%, 100% 0%, 100% 48%, 0% 58%);
+  animation: moveTop 3s ease-in-out infinite;
+}
+
+.text-bottom {
+  clip-path: polygon(0% 60%, 100% 50%, 100% 100%, 0% 100%);
+  color: transparent;
+  background: linear-gradient(177deg, rgb(139, 138, 138) 53%, var(--text-highlight-color) 65%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  transform: translateX(-0.5%);
+  animation: moveBottom 3s ease-in-out infinite;
+}
+
+@keyframes moveTop {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes moveBottom {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(20px);
+  }
+}
